@@ -14,7 +14,14 @@
 <body>
     <header class="jumbotron container-fluid p-3" id="jumbotron">
         <div class="container pt-5">
-            <h1 class="display-1">LET'S HIKE THE USA!</h1>
+            <h1 class="display-1 p-5 text-center border">LET'S HIKE THE USA!</h1>
+            <p class="lead text-center p-3">
+                First, choose your state.
+            </p>
+                <input type="text" class="form-control" id="select-state" list="states">
+                <datalist id="states">
+                    <!-- Populated via JS -->
+                </datalist>
         </div>
     </header>
 
