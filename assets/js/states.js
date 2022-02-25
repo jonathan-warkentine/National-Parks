@@ -336,3 +336,4 @@ statesArray.forEach((state) => {
   optionEl.attr("value", state.state);
   $("#states").append(optionEl);
 });
+
