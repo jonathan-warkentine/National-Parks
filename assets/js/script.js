@@ -1,2 +1,24 @@
-const states = ["Alaska", "Alabama", "Arkansas", "American Samoa", "Arizona", "California", "Colorado", "Connecticut", "District of Columbia", "Delaware", "Florida", "Georgia", "Guam", "Hawaii", "Iowa", "Idaho", "Illinois", "Indiana", "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine", "Michigan", "Minnesota", "Missouri", "Mississippi", "Montana", "North Carolina", "North Dakota", "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "Nevada", "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Virginia", "Virgin Islands", "Vermont", "Washington", "Wisconsin", "West Virginia", "Wyoming"];
-states.forEach(state => $("#states").append(`<option>${state}</option>`));
+
+let longitude = -97;
+let latitude = 38;
+
+require([
+    "esri/config",
+    "esri/Map", 
+    "esri/views/MapView"
+  ], function (esriConfig,Map, MapView) {
+ 
+   esriConfig.apiKey = "AAPK69742b5d3e5d4d969f28ce8b97ee91f9c-GZhvscrk59aNtlQqY1LEIYm6FP_SH-3eVXanS5UfS9755ehIGeGrMn0_NmE_pP";
+ 
+  const map = new Map({
+           basemap: "arcgis-topographic" // Basemap layer service
+         });
+ 
+         const view = new MapView({
+           map: map,
+           center: [longitude, latitude], // Longitude, latitude
+           zoom: 4, // Zoom level
+           container: "mapDiv" // Div element
+         });
+ 
+       });

@@ -1,37 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="./assets/css/style.css"/>
-    <link rel="icon" type="image/x-icon" href="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.22/esri/themes/light/main.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="" />
     <title>Hikes</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="jumbotron container-fluid p-3" id="jumbotron">
-        <div class="container pt-5">
-            <h1 class="display-1 p-5 text-center border">LET'S HIKE THE USA!</h1>
-            <p class="lead text-center p-3">
-                First, choose your state.
-            </p>
-                <input type="text" class="form-control" id="select-state" list="states">
-                <datalist id="states">
-                    <!-- Populated via JS -->
-                </datalist>
-        </div>
+      <div class="container pt-5">
+        <h1 class="display-1 p-5 text-center border">LET'S HIKE THE USA!</h1>
+        <p class="lead text-center p-3">First, choose your state.</p>
+        <input
+          type="text"
+          class="form-control"
+          id="select-state"
+          list="states"
+        />
+        <datalist id="states">
+          <!-- Populated via JS -->
+        </datalist>
+      </div>
     </header>
-
-     <!-- JQuery -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
-     <!-- JQuery UI  -->
-     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-     <!-- Bootstrap JS -->
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-     <!-- custom JS script link below -->
-     <script src="assets/js/script.js"></script>
-</body>
+    <div id="mapDiv"></div>
+<script>
+    
+require([
+    "esri/config",
+    "esri/Map", 
+    "esri/views/MapView"
+  ], function (esriConfig,Map, MapView) {
+ 
+   esriConfig.apiKey = "AAPK69742b5d3e5d4d969f28ce8b97ee91f9c-GZhvscrk59aNtlQqY1LEIYm6FP_SH-3eVXanS5UfS9755ehIGeGrMn0_NmE_pP";
+ 
+  const map = new Map({
+           basemap: "arcgis-topographic" // Basemap layer service
+         });
+ 
+         const view = new MapView({
+           map: map,
+           center: [-118.805, 34.027], // Longitude, latitude
+           zoom: 13, // Zoom level
+           container: "mapDiv" // Div element
+         });
+ 
+       });
+</script>
+    
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- JQuery UI  -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ArcGis-->
+    <script src="https://js.arcgis.com/4.22/"></script>
+    <!-- custom JS script link below -->
+    <script src="assets/js/script.js"></script>
+    <!-- statesObj js link -->
+    <script src="assets/js/statesObj.js"></script>
+  </body>
 </html>
