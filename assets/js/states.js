@@ -1,4 +1,4 @@
-const statesObj = [
+const statesArray = [
   {
     id: 1,
     state: "Alaska",
@@ -330,4 +330,9 @@ const statesObj = [
     longitude: -107.2085,
   },
 ];
-states.forEach((state) => $("#states").append(`<option>${state}</option>`));
+
+statesArray.forEach((state) => {
+  const optionEl = $("<option>");
+  optionEl.attr("value", state.state);
+  $("#states").append(optionEl);
+});

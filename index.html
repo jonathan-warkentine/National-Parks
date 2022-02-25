@@ -26,42 +26,17 @@
       <div class="container pt-5">
         <h1 class="display-1 p-5 text-center border">LET'S HIKE THE USA!</h1>
         <p class="lead text-center p-3">First, choose your state.</p>
-        <input
-          type="text"
-          class="form-control"
-          id="select-state"
-          list="states"
-        />
-        <datalist id="states">
-          <!-- Populated via JS -->
-        </datalist>
+
+        <div class="row flex-nowrap" id="search-wrapper">
+          <input class="form-control" id="select-state" list="states" />
+          <datalist id="states">
+            <!-- Populated via JS -->
+          </datalist>
+          <button type="button" class="btn btn-dark">Search</button>
+        </div>
       </div>
     </header>
     <div id="mapDiv"></div>
-<script>
-    
-require([
-    "esri/config",
-    "esri/Map", 
-    "esri/views/MapView"
-  ], function (esriConfig,Map, MapView) {
- 
-   esriConfig.apiKey = "AAPK69742b5d3e5d4d969f28ce8b97ee91f9c-GZhvscrk59aNtlQqY1LEIYm6FP_SH-3eVXanS5UfS9755ehIGeGrMn0_NmE_pP";
- 
-  const map = new Map({
-           basemap: "arcgis-topographic" // Basemap layer service
-         });
- 
-         const view = new MapView({
-           map: map,
-           center: [-118.805, 34.027], // Longitude, latitude
-           zoom: 13, // Zoom level
-           container: "mapDiv" // Div element
-         });
- 
-       });
-</script>
-    
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <!-- JQuery UI  -->
@@ -77,6 +52,6 @@ require([
     <!-- custom JS script link below -->
     <script src="assets/js/script.js"></script>
     <!-- statesObj js link -->
-    <script src="assets/js/statesObj.js"></script>
+    <script src="assets/js/states.js"></script>
   </body>
 </html>
