@@ -1,278 +1,333 @@
-const statesObj =[
-    {
-      "state":"Alaska",
-      "latitude":61.3850,
-      "longitude":-152.2683
-    },
-    {
-      "state":"Alabama",
-      "latitude":32.7990,
-      "longitude":-86.8073
-    },
-    {
-      "state":"Arkansas",
-      "latitude":34.9513,
-      "longitude":-92.3809
-    },
-    {
-        "state":"American Samoa",
-        "latitude":-14.2710,
-        "longitude":-170.1322,
-    },
-    {
-      "state":"Arizona",
-      "latitude":33.7712,
-      "longitude":-111.3877
-    },
-    {
-      "state":"California",
-      "latitude":36.1700,
-      "longitude":-119.7462
-    },
-    {
-      "state":"Colorado",
-      "latitude":39.0646,
-      "longitude":-105.3272
-    },
-    {
-      "state":"Connecticut",
-      "latitude":41.5834,
-      "longitude":-72.7622
-    },
-    {
-        "state":"District of Columbia",
-        "latitude":38.9072,
-        "longitude":-77.0369
-    },
-    {
-      "state":"Delaware",
-      "latitude":39.3498,
-      "longitude":-75.5148
-    },
-    {
-      "state":"Florida",
-      "latitude":27.8333,
-      "longitude":-81.7170
-    },
-    {
-      "state":"Georgia",
-      "latitude":32.9866,
-      "longitude":-83.6487
-    },
-    {
-        "state":"Guam",
-        "latitude":13.4443,
-        "longitude":144.7937
-    },
-    {
-      "state":"Hawaii",
-      "latitude":21.1098,
-      "longitude":-157.5311
-    },
-    {
-      "state":"Iowa",
-      "latitude":42.0046,
-      "longitude":-93.2140
-    },
-    {
-      "state":"Idaho",
-      "latitude":44.2394,
-      "longitude":-114.5103
-    },
-    {
-      "state":"Illinois",
-      "latitude":40.3363,
-      "longitude":-89.0022
-    },
-    {
-      "state":"Indiana",
-      "latitude":39.8647,
-      "longitude":-86.2604
-    },
-    {
-      "state":"Kansas",
-      "latitude":38.5111,
-      "longitude":-96.8005
-    },
-    {
-      "state":"Kentucky",
-      "latitude":37.6690,
-      "longitude":-84.6514
-    },
-    {
-      "state":"Louisiana",
-      "latitude":31.1801,
-      "longitude":-91.8749
-    },
-    {
-      "state":"Massachusetts",
-      "latitude":42.2373,
-      "longitude":-71.5314
-    },
-    {
-      "state":"Maryland",
-      "latitude":39.0724,
-      "longitude":-76.7902
-    },
-    {
-      "state":"Maine",
-      "latitude":44.6074,
-      "longitude":-69.3977
-    },
-    {
-      "state":"Michigan",
-      "latitude":43.3504,
-      "longitude":-84.5603
-    },
-    {
-      "state":"Minnesota",
-      "latitude":45.7326,
-      "longitude":-93.9196
-    },
-    {
-      "state":"Missouri",
-      "latitude":38.4623,
-      "longitude":-92.3020
-    },
-    {
-      "state":"Mississippi",
-      "latitude":32.7673,
-      "longitude":-89.6812
-    },
-    {
-      "state":"Montana",
-      "latitude":46.9048,
-      "longitude":-110.3261
-    },
-    {
-      "state":"North Carolina",
-      "latitude":35.6411,
-      "longitude":-79.8431
-    },
-    {
-      "state":"North Dakota",
-      "latitude":47.5362,
-      "longitude":-99.7930
-    },
-    {
-      "state":"Nebraska",
-      "latitude":41.1289,
-      "longitude":-98.2883
-    },
-    {
-      "state":"New Hampshire",
-      "latitude":43.4108,
-      "longitude":-71.5653
-    },
-    {
-      "state":"New Jersey",
-      "latitude":40.3140,
-      "longitude":-74.5089
-    },
-    {
-      "state":"New Mexico",
-      "latitude":34.8375,
-      "longitude":-106.2371
-    },
-    {
-      "state":"Nevada",
-      "latitude":38.4199,
-      "longitude":-117.1219
-    },
-    {
-      "state":"New York",
-      "latitude":42.1497,
-      "longitude":-74.9384
-    },
-    {
-      "state":"Ohio",
-      "latitude":40.3736,
-      "longitude":-82.7755
-    },
-    {
-      "state":"Oklahoma",
-      "latitude":35.5376,
-      "longitude":-96.9247
-    },
-    {
-      "state":"Oregon",
-      "latitude":44.5672,
-      "longitude":-122.1269
-    },
-    {
-      "state":"Pennsylvania",
-      "latitude":40.5773,
-      "longitude":-77.2640
-    },
-    {
-        "state":"Puerto Rico",
-        "latitude":18.2208,
-        "longitude":-66.5901
-    },
-    {
-      "state":"Rhode Island",
-      "latitude":41.6772,
-      "longitude":-71.5101
-    },
-    {
-      "state":"South Carolina",
-      "latitude":33.8191,
-      "longitude":-80.9066
-    },
-    {
-      "state":"South Dakota",
-      "latitude":44.2853,
-      "longitude":-99.4632
-    },
-    {
-      "state":"Tennessee",
-      "latitude":35.7449,
-      "longitude":-86.7489
-    },
-    {
-      "state":"Texas",
-      "latitude":31.1060,
-      "longitude":-97.6475
-    },
-    {
-      "state":"Utah",
-      "latitude":40.1135,
-      "longitude":-111.8535
-    },
-    {
-      "state":"Virginia",
-      "latitude":37.7680,
-      "longitude":-78.2057
-    },
-    {
-        "state":"Virgin Islands",
-        "latitude":18.3358,
-        "longitude":-64.8963,
-    },
-    {
-      "state":"Vermont",
-      "latitude":44.0407,
-      "longitude":-72.7093
-    },
-    {
-      "state":"Washington",
-      "latitude":47.3917,
-      "longitude":-121.5708
-    },
-    {
-      "state":"Wisconsin",
-      "latitude":44.2563,
-      "longitude":-89.6385
-    },
-    {
-      "state":"West Virginia",
-      "latitude":38.4680,
-      "longitude":-80.9696
-    },
-    {
-      "state":"Wyoming",
-      "latitude":42.7475,
-      "longitude":-107.2085
-    }
-  ];
+const statesObj = [
+  {
+    id: 1,
+    state: "Alaska",
+    latitude: 61.385,
+    longitude: -152.2683,
+  },
+  {
+    id: 2,
+    state: "Alabama",
+    latitude: 32.799,
+    longitude: -86.8073,
+  },
+  {
+    id: 3,
+    state: "Arkansas",
+    latitude: 34.9513,
+    longitude: -92.3809,
+  },
+  {
+    id: 4,
+    state: "American Samoa",
+    latitude: -14.271,
+    longitude: -170.1322,
+  },
+  {
+    id: 5,
+    state: "Arizona",
+    latitude: 33.7712,
+    longitude: -111.3877,
+  },
+  {
+    id: 6,
+    state: "California",
+    latitude: 36.17,
+    longitude: -119.7462,
+  },
+  {
+    id: 7,
+    state: "Colorado",
+    latitude: 39.0646,
+    longitude: -105.3272,
+  },
+  {
+    id: 8,
+    state: "Connecticut",
+    latitude: 41.5834,
+    longitude: -72.7622,
+  },
+  {
+    id: 9,
+    state: "District of Columbia",
+    latitude: 38.9072,
+    longitude: -77.0369,
+  },
+  {
+    id: 10,
+    state: "Delaware",
+    latitude: 39.3498,
+    longitude: -75.5148,
+  },
+  {
+    id: 11,
+    state: "Florida",
+    latitude: 27.8333,
+    longitude: -81.717,
+  },
+  {
+    id: 12,
+    state: "Georgia",
+    latitude: 32.9866,
+    longitude: -83.6487,
+  },
+  {
+    id: 13,
+    state: "Guam",
+    latitude: 13.4443,
+    longitude: 144.7937,
+  },
+  {
+    id: 14,
+    state: "Hawaii",
+    latitude: 21.1098,
+    longitude: -157.5311,
+  },
+  {
+    id: 15,
+    state: "Iowa",
+    latitude: 42.0046,
+    longitude: -93.214,
+  },
+  {
+    id: 16,
+    state: "Idaho",
+    latitude: 44.2394,
+    longitude: -114.5103,
+  },
+  {
+    id: 17,
+    state: "Illinois",
+    latitude: 40.3363,
+    longitude: -89.0022,
+  },
+  {
+    id: 18,
+    state: "Indiana",
+    latitude: 39.8647,
+    longitude: -86.2604,
+  },
+  {
+    id: 19,
+    state: "Kansas",
+    latitude: 38.5111,
+    longitude: -96.8005,
+  },
+  {
+    id: 20,
+    state: "Kentucky",
+    latitude: 37.669,
+    longitude: -84.6514,
+  },
+  {
+    id: 21,
+    state: "Louisiana",
+    latitude: 31.1801,
+    longitude: -91.8749,
+  },
+  {
+    id: 22,
+    state: "Massachusetts",
+    latitude: 42.2373,
+    longitude: -71.5314,
+  },
+  {
+    id: 23,
+    state: "Maryland",
+    latitude: 39.0724,
+    longitude: -76.7902,
+  },
+  {
+    id: 24,
+    state: "Maine",
+    latitude: 44.6074,
+    longitude: -69.3977,
+  },
+  {
+    id: 25,
+    state: "Michigan",
+    latitude: 43.3504,
+    longitude: -84.5603,
+  },
+  {
+    id: 26,
+    state: "Minnesota",
+    latitude: 45.7326,
+    longitude: -93.9196,
+  },
+  {
+    id: 27,
+    state: "Missouri",
+    latitude: 38.4623,
+    longitude: -92.302,
+  },
+  {
+    id: 28,
+    state: "Mississippi",
+    latitude: 32.7673,
+    longitude: -89.6812,
+  },
+  {
+    id: 29,
+    state: "Montana",
+    latitude: 46.9048,
+    longitude: -110.3261,
+  },
+  {
+    id: 30,
+    state: "North Carolina",
+    latitude: 35.6411,
+    longitude: -79.8431,
+  },
+  {
+    id: 31,
+    state: "North Dakota",
+    latitude: 47.5362,
+    longitude: -99.793,
+  },
+  {
+    id: 32,
+    state: "Nebraska",
+    latitude: 41.1289,
+    longitude: -98.2883,
+  },
+  {
+    id: 33,
+    state: "New Hampshire",
+    latitude: 43.4108,
+    longitude: -71.5653,
+  },
+  {
+    id: 34,
+    state: "New Jersey",
+    latitude: 40.314,
+    longitude: -74.5089,
+  },
+  {
+    id: 35,
+    state: "New Mexico",
+    latitude: 34.8375,
+    longitude: -106.2371,
+  },
+  {
+    id: 36,
+    state: "Nevada",
+    latitude: 38.4199,
+    longitude: -117.1219,
+  },
+  {
+    id: 37,
+    state: "New York",
+    latitude: 42.1497,
+    longitude: -74.9384,
+  },
+  {
+    id: 38,
+    state: "Ohio",
+    latitude: 40.3736,
+    longitude: -82.7755,
+  },
+  {
+    id: 39,
+    state: "Oklahoma",
+    latitude: 35.5376,
+    longitude: -96.9247,
+  },
+  {
+    id: 40,
+    state: "Oregon",
+    latitude: 44.5672,
+    longitude: -122.1269,
+  },
+  {
+    id: 41,
+    state: "Pennsylvania",
+    latitude: 40.5773,
+    longitude: -77.264,
+  },
+  {
+    id: 42,
+    state: "Puerto Rico",
+    latitude: 18.2208,
+    longitude: -66.5901,
+  },
+  {
+    id: 43,
+    state: "Rhode Island",
+    latitude: 41.6772,
+    longitude: -71.5101,
+  },
+  {
+    id: 44,
+    state: "South Carolina",
+    latitude: 33.8191,
+    longitude: -80.9066,
+  },
+  {
+    id: 45,
+    state: "South Dakota",
+    latitude: 44.2853,
+    longitude: -99.4632,
+  },
+  {
+    id: 46,
+    state: "Tennessee",
+    latitude: 35.7449,
+    longitude: -86.7489,
+  },
+  {
+    id: 47,
+    state: "Texas",
+    latitude: 31.106,
+    longitude: -97.6475,
+  },
+  {
+    id: 48,
+    state: "Utah",
+    latitude: 40.1135,
+    longitude: -111.8535,
+  },
+  {
+    id: 49,
+    state: "Virginia",
+    latitude: 37.768,
+    longitude: -78.2057,
+  },
+  {
+    id: 50,
+    state: "Virgin Islands",
+    latitude: 18.3358,
+    longitude: -64.8963,
+  },
+  {
+    id: 51,
+    state: "Vermont",
+    latitude: 44.0407,
+    longitude: -72.7093,
+  },
+  {
+    id: 52,
+    state: "Washington",
+    latitude: 47.3917,
+    longitude: -121.5708,
+  },
+  {
+    id: 53,
+    state: "Wisconsin",
+    latitude: 44.2563,
+    longitude: -89.6385,
+  },
+  {
+    id: 54,
+    state: "West Virginia",
+    latitude: 38.468,
+    longitude: -80.9696,
+  },
+  {
+    id: 55,
+    state: "Wyoming",
+    latitude: 42.7475,
+    longitude: -107.2085,
+  },
+];
 states.forEach((state) => $("#states").append(`<option>${state}</option>`));
