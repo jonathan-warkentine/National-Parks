@@ -1,2 +1,34 @@
-const states = ["Alaska", "Alabama", "Arkansas", "American Samoa", "Arizona", "California", "Colorado", "Connecticut", "District of Columbia", "Delaware", "Florida", "Georgia", "Guam", "Hawaii", "Iowa", "Idaho", "Illinois", "Indiana", "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine", "Michigan", "Minnesota", "Missouri", "Mississippi", "Montana", "North Carolina", "North Dakota", "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "Nevada", "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Virginia", "Virgin Islands", "Vermont", "Washington", "Wisconsin", "West Virginia", "Wyoming"];
-states.forEach(state => $("#states").append(`<option>${state}</option>`));
+function renderMap(longitude, latitude, zoom) {
+  require(["esri/config", "esri/Map", "esri/views/MapView"], function (
+    esriConfig,
+    Map,
+    MapView
+  ) {
+    esriConfig.apiKey =
+      "AAPK69742b5d3e5d4d969f28ce8b97ee91f9c-GZhvscrk59aNtlQqY1LEIYm6FP_SH-3eVXanS5UfS9755ehIGeGrMn0_NmE_pP";
+
+    const map = new Map({
+      basemap: "arcgis-topographic", // Basemap layer service
+    });
+
+    const view = new MapView({
+      map: map,
+      center: [longitude, latitude], // Longitude, latitude
+      zoom: zoom, // Zoom level
+      container: "mapDiv", // Div element
+    });
+  });
+}
+
+$("#searchBtn").click(function () {
+  let searchEl = $("#select-state").val().toLowerCase();
+  console.log(searchEl);
+  for (let i = 0; i < statesArray.length; i++) {
+    if (searchEl === statesArray[i].state.toLocaleLowerCase()) {
+      console.log(statesArray[i].latitude);
+      console.log(statesArray[i].longitude);
+      renderMap(statesArray[i].longitude, statesArray[i].latitude, 6);
+    }
+  }
+});
+renderMap(-97, 38, 4);
